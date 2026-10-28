@@ -77,6 +77,7 @@ The study examines whether nonlinear features can provide additional predictive 
 
 ## Results
 
+Model Performance
 | Feature Configuration | Model | R² | MAE | RMSE |
 |---|---|---:|---:|---:|
 | Traditional Acoustic | Linear Regression | −0.262 ± 0.314 | 9.244 ± 1.789 | 11.136 ± 1.777 |
@@ -88,3 +89,52 @@ The study examines whether nonlinear features can provide additional predictive 
 | Combined Features | Linear Regression | −0.258 ± 0.298 | 9.294 ± 1.661 | 11.164 ± 2.087 |
 | Combined Features | Random Forest | −0.353 ± 0.357 | 9.485 ± 1.501 | 11.521 ± 1.844 |
 | Combined Features | Gradient Boosting | −0.344 ± 0.349 | 9.426 ± 1.373 | 11.475 ± 1.721 
+
+
+Feature Comparison
+The performance of the feature combinations was compared to assess whether nonlinear voice features provided additional predictive information beyond traditional acoustic features. The combined-feature models were evaluated against corresponding traditional-feature and nonlinear-feature models using the same patient-level validation strategy. Differences in R², MAE, and RMSE were examined to determine whether combining feature categories improved predictive performance.
+
+Key Findings
+The best performing feature-model combination was clinical features under Linear Regression. However, between either nonlinear or traditional features, the best feature-model combination was traditional features through Linear Regression. Each model was evaluated using patient-level validation to assess their ability to generalize to previously unseen participants. The study emphasizes the distinction between predicting recordings from familiar participants and generalizing to new individuals. Negative R² values indicate that the evaluated models performed worse than a mean-based prediction baseline on the corresponding evaluation data.
+
+## Reproducibility
+The analysis uses Python and the following libraries:
+- NumPy
+- pandas
+- scikit-learn
+- Matplotlib
+- Seaborn
+- SciPy
+
+Dataset Access
+- This project uses the Parkinson's Telemonitoring dataset, originally available through the UCI Machine Learning Repository and accessed via Kaggle.
+- The dataset contains 5,875 voice recordings from 42 individuals. The target variable is `total_UPDRS`.
+- The dataset is not included in this repository. Obtain it from the original source or the source used in this analysis, and review its applicable terms of use before redistributing it.
+
+Installation
+Clone the repository:
+
+```bash
+git clone https://github.com/YOUR-USERNAME/parkinsons-voice-biomarkers.git
+cd parkinsons-voice-biomarkers
+```
+
+Install the required dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Running the Analysis
+1. Open `notebooks/Parkinsons_Voice_Biomarkers.ipynb`.
+2. Obtain the dataset and make it available to the notebook.
+3. Update the dataset file path if necessary.
+4. Install the required dependencies.
+5. Run the notebook cells in order, from top to bottom.
+
+The analysis includes data exploration, feature evaluation, regression modeling, and patient-level validation.
+
+Reproducibility Notes
+Results may vary depending on package versions, random seeds, data preprocessing, and validation settings. Refer to the notebook for the implemented methodology and evaluation procedures.
+
+
