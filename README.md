@@ -115,7 +115,7 @@ Installation
 Clone the repository:
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/parkinsons-voice-biomarkers.git
+git clone https://github.com/Sayan-Pr/parkinsons-voice-biomarkers.git
 cd parkinsons-voice-biomarkers
 ```
 
